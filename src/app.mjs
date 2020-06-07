@@ -1,7 +1,11 @@
+import _ from 'highland'
 import express from 'express'
 import inventory from './inventory.mjs'
 import RegisterPath from './effects/register-path.mjs'
-import append from './fn/append.mjs'
+
+const TYPE_NDJSON = 'application/x-ndjson'
+const TYPE_JSON = 'json'
+const TYPES = [TYPE_NDJSON, TYPE_JSON]
 
 /**
  * HTTP API for working with `docker-inventory-git`.
@@ -19,14 +23,30 @@ export default ({
   const { registerPath, getDocumentation } = RegisterPath(app)
   registerPath('/inventory', {
     head: (req, res) => {
-      res.type('application/x-ndjson').send()
+      const acceptable = req.accepts(TYPES)
+      if (acceptable) {
+        res.type(acceptable).send()
+      } else {
+        res.sendStatus(406)
+      }
     },
 
     get: (req, res) => {
-      inventory()
-        .map(JSON.stringify)
-        .map(append('\n'))
-        .pipe(res.type('application/x-ndjson'))
+      const lines = inventory().map(JSON.stringify)
+      const acceptable = req.accepts(TYPES)
+
+      if (acceptable === TYPE_NDJSON) {
+        return lines.intersperse('\n').pipe(res.type(TYPE_NDJSON))
+      }
+
+      if (acceptable === TYPE_JSON) {
+        return _(['[\n'])
+          .concat(lines.intersperse(',\n'))
+          .concat(['\n]'])
+          .pipe(res.type(TYPE_JSON))
+      }
+
+      res.sendStatus(406)
     },
   })
   registerPath('/', {
