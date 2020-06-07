@@ -1,2 +1,1 @@
-export { default as generateGreeting } from './generate-greeting.mjs'
-export { default as identity } from './identity.mjs'
+export { default as server } from './server.mjs'
