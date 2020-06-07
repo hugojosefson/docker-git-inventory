@@ -1,4 +1,4 @@
-import inventory from '../inventory.mjs'
+import inventory from '../effects-docker/inventory.mjs'
 
 export default () => ({
   command: 'inventory',

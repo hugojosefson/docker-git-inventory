@@ -1,10 +1,10 @@
-import stacks from './effects-docker/stacks.mjs'
-import stackToTasks from './effects-docker/stack-to-tasks.mjs'
-import taskToDetails from './effects-docker/task-to-details.mjs'
-import serviceToDetails from './effects-docker/service-to-details.mjs'
-import serviceName from './fn/service-name.mjs'
-import imageToLabels from './effects-docker/image-to-labels.mjs'
-import serviceToLabels from './effects-docker/service-to-labels.mjs'
+import stacks from './stacks.mjs'
+import stackToTasks from './stack-to-tasks.mjs'
+import taskToDetails from './task-to-details.mjs'
+import serviceToDetails from './service-to-details.mjs'
+import serviceName from '../fn/service-name.mjs'
+import imageToLabels from './image-to-labels.mjs'
+import serviceToLabels from './service-to-labels.mjs'
 
 /**
  * Takes an inventory of currently running Docker stacks.
