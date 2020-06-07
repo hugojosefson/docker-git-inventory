@@ -6,31 +6,16 @@ export default () => ({
   description: 'Serve an HTTP API for docker-git-inventory.',
 
   builder: argv =>
-    argv
-      .env()
-      .strict(false)
-      .demandOption(['port'])
-      .option('p', {
-        alias: 'port',
-        type: 'integer',
-        description: 'Port for server to listen on.',
-      })
-      .option('n', {
-        alias: 'dry-run',
-        type: 'boolean',
-        description: "Don't actually serve.",
-      }),
+    argv.env().strict(false).demandOption(['port']).option('p', {
+      alias: 'port',
+      type: 'integer',
+      description: 'Port for server to listen on.',
+    }),
 
-  handler: async ({ dryRun, port }) => {
+  handler: async ({ port }) => {
     try {
-      console.info(
-        'server: ' + (dryRun ? 'Not starting up...' : 'Starting up...')
-      )
+      console.info('server: Starting up...')
       const app = await App()
-      if (dryRun) {
-        return
-      }
-
       const server = await new Promise((resolve, reject) => {
         const server = app.listen(port, () => resolve(server))
         server.on('error', reject)
