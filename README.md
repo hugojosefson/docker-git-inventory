@@ -55,3 +55,11 @@ Serves a person or entity.
 Returns
 **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**
 A `Promise` for the server.
+
+#### inventory
+
+Takes an inventory of currently running Docker stacks.
+
+Returns
+**Highland.Stream&lt;[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>**
+A Highland stream of objects, each describing one service.

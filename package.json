@@ -43,6 +43,7 @@
     ]
   },
   "devDependencies": {
+    "@types/highland": "^2.12.10",
     "documentation": "^13.0.1",
     "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -60,6 +61,11 @@
     "rollup": "^2.13.1"
   },
   "dependencies": {
+    "@hugojosefson/env-config": "^1.3.0",
+    "execa": "^4.0.2",
+    "highland": "^2.13.5",
+    "isomorphic-git": "^1.4.1",
+    "memfs": "^3.2.0",
     "term-size": "^2.2.0",
     "yargs": "^15.3.1"
   },
