@@ -1,7 +1,7 @@
 {
   "name": "@hugojosefson/docker-git-inventory",
   "version": "0.0.1",
-  "description": "",
+  "description": "Extract Docker Stack's running services' versions, pushing named refs to git repos",
   "main": "./cjs/index.js",
   "module": "./src/index.mjs",
   "bin": {
@@ -26,9 +26,17 @@
     "mocha": "mocha",
     "npm-audit": "npm install --package-lock-only && npm audit; rm package-lock.json"
   },
-  "author": "",
+  "author": "Hugo Josefson <hugo@josefson.org> (https://www.hugojosefson.com/)",
   "repository": "hugojosefson/docker-git-inventory",
   "license": "MIT",
+  "keywords": [
+    "docker",
+    "git",
+    "deploy",
+    "deployed",
+    "version",
+    "inventory"
+  ],
   "mocha": {
     "spec": "test/*-test.mjs"
   },
