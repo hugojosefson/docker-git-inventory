@@ -1,11 +1,11 @@
 {
-  "name": "@hugojosefson/example-cli",
-  "version": "4.0.0",
-  "description": "Example Node.js CLI app.",
+  "name": "@hugojosefson/docker-git-inventory",
+  "version": "0.0.1",
+  "description": "",
   "main": "./cjs/index.js",
   "module": "./src/index.mjs",
   "bin": {
-    "example-cli": "src/cli.mjs"
+    "docker-git-inventory": "src/cli.mjs"
   },
   "files": [
     "src",
@@ -26,18 +26,9 @@
     "mocha": "mocha",
     "npm-audit": "npm install --package-lock-only && npm audit; rm package-lock.json"
   },
-  "author": "Hugo Josefson <hugo@josefson.org> (https://www.hugojosefson.com/)",
-  "repository": "hugojosefson/nodejs-example-cli",
+  "author": "",
+  "repository": "hugojosefson/docker-git-inventory",
   "license": "MIT",
-  "keywords": [
-    "node",
-    "nodejs",
-    "cli",
-    "bin",
-    "esmodule",
-    "example",
-    "template"
-  ],
   "mocha": {
     "spec": "test/*-test.mjs"
   },

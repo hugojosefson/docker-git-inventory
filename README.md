@@ -1,48 +1,14 @@
 # Node.js example CLI app
 
-[![Build Status](https://travis-ci.org/hugojosefson/nodejs-example-cli.svg?branch=master)](https://travis-ci.org/hugojosefson/nodejs-example-cli)
-[![npm page](https://img.shields.io/npm/v/@hugojosefson/example-cli.svg)](https://npmjs.com/package/@hugojosefson/example-cli)
-[![License MIT](https://img.shields.io/npm/l/@hugojosefson/example-cli.svg)](https://tldrlegal.com/license/mit-license)
+[![Build Status](https://travis-ci.org/hugojosefson/docker-git-inventory.svg?branch=master)](https://travis-ci.org/hugojosefson/docker-git-inventory)
+[![npm page](https://img.shields.io/npm/v/@hugojosefson/docker-git-inventory.svg)](https://npmjs.com/package/@hugojosefson/docker-git-inventory)
+[![License MIT](https://img.shields.io/npm/l/@hugojosefson/docker-git-inventory.svg)](https://tldrlegal.com/license/mit-license)
 [![SemVer 2.0.0](https://img.shields.io/badge/SemVer-2.0.0-lightgrey.svg)](https://semver.org/spec/v2.0.0.html)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Introduction
 
 This is a simple CLI app in Node.js, using ES Modules.
-
-### Using as a template
-
-_To use this project as a template for your own project, you can do this:_
-
-```bash
-mkdir my-cli
-cd my-cli
-git init
-curl https://codeload.github.com/hugojosefson/nodejs-example-cli/tar.gz/master | tar xzv --strip-components=1
-git add --all
-git commit -m 'Add template files from nodejs-example-cli.'
-yarn
-```
-
-_You may wish to make it more your own project:_
-
-```bash
-export NPM_NAME='@xxxx/yyyy'     # replace with your project's npm name
-export GITHUB_REPO='xxxx/yyyy'   # replace with your project's github repo
-
-rm CHANGELOG.md
-npx replace '^#+ Using as a template[^#]*'    ''                   README.md
-npx replace '"version": "[^"]+"'              '"version": "0.0.1"' package.json
-npx replace '"description": "[^"]+"'          '"description": ""'  package.json
-npx replace '"author": "[^"]+"'               '"author": ""'       package.json
-npx replace '@hugojosefson/example-cli'       "${NPM_NAME}"        . --recursive
-npx replace 'hugojosefson/nodejs-example-cli' "${GITHUB_REPO}"     . --recursive
-
-git add --all
-git commit -m "Rename project to ${NPM_NAME}."
-```
-
-_Then edit `package.json` and go on developing!_
 
 ## Prerequisite
 
@@ -57,7 +23,7 @@ nvm install stable
 ## Usage
 
 ```bash
-npx --package @hugojosefson/example-cli example-cli greet "Your Name"
+npx --package @hugojosefson/docker-git-inventory docker-git-inventory greet "Your Name"
 ```
 
 Will say hello to you.
