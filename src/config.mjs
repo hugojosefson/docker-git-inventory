@@ -1,13 +1,17 @@
 import envConfig from '@hugojosefson/env-config'
-import camelcase from 'camelcase'
+import ramda from 'ramda'
 import ra from 'ramda-adjunct'
+import camelcase from 'camelcase'
 
-const transformer = ra.renameKeysWith(camelcase)
+const { always, memoizeWith } = ramda
+const { renameKeysWith } = ra
 
-export default () => {
-  const { gitAuthentication } = envConfig({
+const transformer = renameKeysWith(camelcase)
+
+export default memoizeWith(always('a'), () => {
+  const { gitAuthentication, debug, port } = envConfig({
     transformer,
   })
 
-  return { gitAuthentication }
-}
+  return { gitAuthentication, debug, port }
+})
