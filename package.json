@@ -1,6 +1,6 @@
 {
   "name": "@hugojosefson/docker-git-inventory",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Extract Docker Stack's running services' versions, pushing named refs to git repos",
   "main": "./cjs/index.js",
   "module": "./src/index.mjs",
