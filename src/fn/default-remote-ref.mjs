@@ -1,4 +1,5 @@
 import { basename } from 'path'
+import debugLogAndReturn from '../effects/debug-log-and-return.mjs'
 
 /**
  * Reasonable calculation of remoteRef, based on milieu, serviceName and git url.
@@ -15,10 +16,26 @@ export default (prefix = 'refs/deployed/') =>
    * @param service.url git url. Will be used together with serviceName for calculating any alternative suffix.
    * @return {string|undefined} a reasonable remoteRef, or undefined if not enough arguments available, so you can filter it out.
    */
-  ({ milieu, serviceName, url }) => {
-    if (!milieu) return undefined
-    if (!url) return undefined
-    if (!serviceName) return undefined
+  (service = {}) => {
+    const { milieu, serviceName, url } = service
+    if (!milieu) {
+      return debugLogAndReturn(
+        `Ignoring service because no milieu:`,
+        service
+      )(undefined)
+    }
+    if (!url) {
+      return debugLogAndReturn(
+        `Ignoring service because no url:`,
+        service
+      )(undefined)
+    }
+    if (!serviceName) {
+      return debugLogAndReturn(
+        `Ignoring service because no serviceName:`,
+        service
+      )(undefined)
+    }
 
     const repoName = basename(url, '.git')
     if (serviceName.startsWith(repoName)) {
