@@ -25,10 +25,12 @@ export default app => {
       'options',
       ...methods,
       ...(shouldAllowHeadToo ? ['head'] : []),
-    ].map(method => method.toUpperCase())
+    ]
+      .map(method => method.toUpperCase())
+      .sort()
 
     app.use(onlyAt(path, allowMethods(allowedMethods)))
-    documentation[path] = methods
+    documentation[path] = allowedMethods
 
     Object.entries(handlers)
       .map(([method, requestHandlers]) => [
