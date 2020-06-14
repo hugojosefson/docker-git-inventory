@@ -1,6 +1,7 @@
 import express from 'express'
 import RegisterPath from './effects/register-path.mjs'
 import inventoryHandlers from './path-handlers/inventory-handlers.mjs'
+import pushRefsHandlers from './path-handlers/push-refs-handlers.mjs'
 import rootHandlers from './path-handlers/root-handlers.mjs'
 
 /**
@@ -19,6 +20,7 @@ export default ({
   const { registerPath, getDocumentation } = RegisterPath(app)
 
   registerPath('/inventory', inventoryHandlers())
+  registerPath('/push-refs', pushRefsHandlers())
   registerPath('/', rootHandlers({ getDocumentation }))
 
   return app

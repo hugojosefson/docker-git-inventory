@@ -1,3 +1,6 @@
 export { default as inventory } from './effects-docker/inventory.mjs'
-export { default as app } from './app.mjs'
+export { default as inventoryToPushes } from './fn/inventory-to-pushes.mjs'
+export { default as defaultRemoteRef } from './fn/default-remote-ref.mjs'
+export { default as defaultServiceToPush } from './fn/default-service-to-push.mjs'
 export { default as pushRef } from './effects-git/push-ref.mjs'
+export { default as app } from './app.mjs'

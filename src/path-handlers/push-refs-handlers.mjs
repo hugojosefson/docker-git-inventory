@@ -1,5 +1,6 @@
 import _ from 'highland'
 import inventory from '../effects-docker/inventory.mjs'
+import { defaultServiceToPush, inventoryToPushes } from '../index.mjs'
 
 const TYPE_NDJSON = 'application/x-ndjson'
 const TYPE_JSON = 'json'
@@ -21,7 +22,9 @@ export default () => ({
       return res.sendStatus(406)
     }
 
-    const lines = inventory().map(JSON.stringify)
+    const serviceToPush = defaultServiceToPush(req.query)
+    const pushes = inventoryToPushes(serviceToPush)(inventory())
+    const lines = pushes.map(JSON.stringify)
 
     if (acceptable === TYPE_NDJSON) {
       return lines.intersperse('\n').pipe(res.type(TYPE_NDJSON))
