@@ -8,4 +8,4 @@ export default ({ serviceId, labels = {}, ...rest }) =>
       labels: { ...labels, ...moreLabels },
     })
   )
-// TODO: search all of the inspection json output for Labels, in all inspections
+// TODO: search all of the inspection json output for Labels, in all inspections?
