@@ -26,10 +26,16 @@ nvm install stable
 ## Usage
 
 ```bash
-npx --package @hugojosefson/docker-git-inventory docker-git-inventory --help
+npx --package @hugojosefson/docker-git-inventory docker-git-inventory
 ```
 
-Will print usage information.
+Gives an inventory.
+
+```bash
+npx --package @hugojosefson/docker-git-inventory docker-git-inventory-server
+```
+
+Starts an HTTP API server.
 
 ## Programmatic access
 

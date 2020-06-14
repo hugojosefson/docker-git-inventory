@@ -5,7 +5,9 @@
   "main": "./cjs/index.js",
   "module": "./src/index.mjs",
   "bin": {
-    "docker-git-inventory": "src/cli.mjs"
+    "docker-git-inventory": "src/cli/inventory.mjs",
+    "docker-git-inventory-server": "src/cli/server.mjs",
+    "docker-git-inventory-push-ref": "src/cli/push-ref.mjs"
   },
   "files": [
     "src",
