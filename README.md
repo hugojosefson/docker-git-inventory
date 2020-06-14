@@ -117,6 +117,20 @@ remoteRef:
 \|
 [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))}**
 
+#### app
+
+HTTP API for working with `docker-inventory-git`.
+
+##### Parameters
+
+- `options`
+  **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+  (optional, default `{}`)
+  - `options.app` **(Express | Application | IRouter)** Express.js Application
+    instance or Router on which to apply paths. (optional, default `express()`)
+
+Returns **(Express | Application | IRouter)** app, mutated.
+
 #### inventory
 
 Takes an inventory of currently running Docker stacks.
@@ -183,22 +197,3 @@ Pushes a git commit to its repo, with a specific remoteRef.
 Returns
 **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>**
 resolves when done
-
-#### app
-
-HTTP API for working with `docker-inventory-git`.
-
-##### Parameters
-
-- `options`
-  **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
-  (optional, default `{}`)
-  - `options.app` **(Express | Application | IRouter)** Express.js Application
-    instance or Router on which to apply paths. (optional, default `express()`)
-  - `options.gitAuthentication` **GitAuth** Response for our `AuthCallback` to
-    `onAuth`. If `undefined`, `onAuth` will not be used. (optional, default
-    `undefined`)
-  - `options.onAuth` **AuthCallback** `onAuth` implementation. (optional,
-    default `gitAuthentication?()=>gitAuthentication:undefined`)
-
-Returns **(Express | Application | IRouter)** app, mutated.
