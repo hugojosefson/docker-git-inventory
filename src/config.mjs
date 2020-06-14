@@ -7,11 +7,6 @@ const { always, memoizeWith } = ramda
 const { renameKeysWith } = ra
 
 const transformer = renameKeysWith(camelcase)
+const memoizeConstant = memoizeWith(always('a'))
 
-export default memoizeWith(always('a'), () => {
-  const { gitAuthentication, debug, port } = envConfig({
-    transformer,
-  })
-
-  return { gitAuthentication, debug, port }
-})
+export default memoizeConstant(() => envConfig({ transformer }))
