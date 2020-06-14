@@ -84,3 +84,31 @@ HTTP API for working with `docker-inventory-git`.
     default `gitAuthentication?()=>gitAuthentication:undefined`)
 
 Returns **(Express | Application | IRouter)** app, mutated.
+
+#### pushRef
+
+Pushes a git commit to its repo, with a specific remoteRef.
+
+##### Parameters
+
+- `options`
+  **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+  - `options.username`
+    **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+    username for git authentication
+  - `options.password`
+    **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+    password for authentication
+  - `options.url`
+    **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+    git repo url
+  - `options.ref`
+    **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+    the commit to push
+  - `options.remoteRef`
+    **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
+    name of the remote ref, for example refs/deployed/stage
+
+Returns
+**[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>**
+resolves when done
