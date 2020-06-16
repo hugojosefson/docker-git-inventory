@@ -6,7 +6,6 @@ const defaultOptions = {
   http,
   dir: '/tree',
   gitDir: '/git',
-  depth: 1,
   noTags: true,
   noCheckout: true,
 }

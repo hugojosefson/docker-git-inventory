@@ -14,6 +14,6 @@ import clone from './clone.mjs'
  */
 export default async ({ username, password, url, ref, remoteRef }) => {
   const gitOptions = await clone({ username, password, url })
-  await git.fetch({ ...gitOptions, ref, depth: Number.MAX_SAFE_INTEGER })
+  await git.fetch({ ...gitOptions, ref })
   await git.push({ ...gitOptions, ref, remoteRef, force: true })
 }
