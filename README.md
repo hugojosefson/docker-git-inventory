@@ -25,13 +25,16 @@ nvm install stable
 
 ## Usage
 
+### Get an inventory
+
 ```bash
 npx --package @hugojosefson/docker-git-inventory docker-git-inventory
 ```
 
-Gives an inventory.
+### Start an HTTP API server
 
 ```bash
+PORT=3000 \
 npx --package @hugojosefson/docker-git-inventory docker-git-inventory-server
 ```
 
