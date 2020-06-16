@@ -7,7 +7,8 @@
   "bin": {
     "docker-git-inventory": "src/cli/inventory.mjs",
     "docker-git-inventory-server": "src/cli/server.mjs",
-    "docker-git-inventory-push-ref": "src/cli/push-ref.mjs"
+    "docker-git-inventory-push-ref": "src/cli/push-ref.mjs",
+    "docker-git-inventory-push-refs": "src/cli/push-refs.mjs"
   },
   "files": [
     "src",

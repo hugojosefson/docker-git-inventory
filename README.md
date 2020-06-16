@@ -38,7 +38,18 @@ PORT=3000 \
 npx --package @hugojosefson/docker-git-inventory docker-git-inventory-server
 ```
 
-Starts an HTTP API server.
+### Push refs to git
+
+The `docker-git-inventory-push-refs` command takes an inventory on `stdin` as
+[JSON lines](http://jsonlines.org/).
+
+```bash
+curl -s localhost:3000/inventory | \
+  USERNAME=mygitusername \
+  PASSWORD=mygitpassword \
+  npx --package @hugojosefson/docker-git-inventory \
+    docker-git-inventory-push-refs
+```
 
 ## Programmatic access
 
