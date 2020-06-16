@@ -17,14 +17,15 @@ const inventory = streamInput(process.stdin).errors(
   handleError('reading input')
 )
 
-const serviceToPush = defaultServiceToPush(config())
+const { username, password, url, ref, remoteRef } = config()
+const defaultArgs = { username, password, url, ref, remoteRef }
+const serviceToPush = defaultServiceToPush(defaultArgs)
 const pushes = inventoryToPushes(serviceToPush)(inventory).errors(
   handleError('converting to push')
 )
 
 pushes
-  .map(pushRef)
-  .flatMap(_)
+  .flatMap(push => _(pushRef(push)))
   .errors(handleError('pushing'))
   .done(() => {
     process.exit(exitCode)
