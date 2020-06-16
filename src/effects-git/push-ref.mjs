@@ -1,5 +1,6 @@
 import git from 'isomorphic-git/index.js'
 import clone from './clone.mjs'
+import debugLog from '../effects/debug-log-and-return.mjs'
 
 /**
  * Pushes a git commit to its repo, with a specific remoteRef.
@@ -13,6 +14,7 @@ import clone from './clone.mjs'
  * @returns {Promise<void>} resolves when done
  */
 export default async ({ username, password, url, ref, remoteRef }) => {
+  debugLog(`push-ref:`, { ref, url, remoteRef })()
   const gitOptions = await clone({ username, password, url })
   await git.fetch({ ...gitOptions, ref })
   await git.push({ ...gitOptions, ref, remoteRef, force: true })
