@@ -4,6 +4,8 @@ import inventoryHandlers from './path-handlers/inventory-handlers.mjs'
 import pushRefsHandlers from './path-handlers/push-refs-handlers.mjs'
 import rootHandlers from './path-handlers/root-handlers.mjs'
 
+export { inventoryHandlers, pushRefsHandlers }
+
 /**
  * HTTP API for working with `docker-inventory-git`.
  * @param {object} options
