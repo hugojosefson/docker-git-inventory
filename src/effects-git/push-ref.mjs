@@ -1,4 +1,4 @@
-import git from 'isomorphic-git'
+import git from 'isomorphic-git/index.js'
 import clone from './clone.mjs'
 
 /**
