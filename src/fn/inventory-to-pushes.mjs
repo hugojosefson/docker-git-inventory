@@ -1,8 +1,7 @@
 import _ from 'highland'
-import ramda from 'ramda'
+import { is } from 'ramda'
 import hasRequiredStringProps from './has-required-string-props.mjs'
 
-const { is } = ramda
 const isArray = is(Array)
 const isObject = is(Object)
 const isPromise = is(Promise)

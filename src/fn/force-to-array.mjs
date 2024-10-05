@@ -1,6 +1,5 @@
-import ramda from 'ramda'
+import { is } from 'ramda'
 
-const { is } = ramda
 const isArray = is(Array)
 
 export default a => (isArray(a) ? a : [a])

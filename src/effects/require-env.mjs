@@ -1,7 +1,5 @@
 import camelcase from 'camelcase'
-import ramda from 'ramda'
-
-const { is } = ramda
+import { is } from 'ramda'
 
 export default (config, exitCode = 1) => {
   return ([key, requiredType]) => {

@@ -1,6 +1,5 @@
-import ramda from 'ramda'
+import { is, isEmpty } from 'ramda'
 
-const { is, isEmpty } = ramda
 const isString = is(String)
 
 export default props => a =>

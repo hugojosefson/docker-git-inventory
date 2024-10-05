@@ -1,9 +1,7 @@
 import onlyAt from 'middleware-only-at-path'
 import allowMethods from 'allow-methods'
-import ramda from 'ramda'
+import { mapObjIndexed } from 'ramda'
 import forceToArray from '../fn/force-to-array.mjs'
-
-const { mapObjIndexed } = ramda
 
 /**
  * Creates a helper function `registerPath` for registering request handlers on a path, and at the same time limiting requests to the http methods supplied (plus OPTIONS).
