@@ -76,7 +76,7 @@ Reasonable calculation of remoteRef, based on milieu, serviceName and git url.
 
 Returns **(function ({milieu, serviceName, url}):
 [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-\|
+|
 [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))**
 function for calculating a reasonable remoteRef
 
@@ -88,23 +88,23 @@ Reasonable conversion from service (via inventory), to arguments to pushRef.
 
 - `defaultArgs` **{username:
   ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-  \|
+  |
   [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)),
   password:
   ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-  \|
+  |
   [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)),
   url:
   ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-  \|
+  |
   [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)),
   ref:
   ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-  \|
+  |
   [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)),
   remoteRef:
   ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-  \|
+  |
   [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))}**
   for example {username, password} (optional, default `{}`)
 
@@ -112,34 +112,34 @@ Returns **function ({serviceName:
 [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String),
 labels: {GIT_URL:
 ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-\|
+|
 [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)),
 GIT_COMMIT:
 ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-\|
+|
 [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)),
 milieu:
 ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-\|
+|
 [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))}}?):
 {ref:
 ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-\|
+|
 [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)),
 url:
 ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-\|
+|
 [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined)),
 remoteRef:
 ([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)
-\|
+|
 [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))}**
 
 #### inventory
 
 Takes an inventory of currently running Docker stacks.
 
-Returns **Highland.Stream&lt;{stack:
+Returns **Highland.Stream<{stack:
 [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String),
 taskId:
 [string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String),
@@ -163,15 +163,15 @@ objects for pushRef.
 ##### Parameters
 
 - `serviceToPush` **(function ({stack, taskId, image, serviceId, serviceName,
-  serviceNameLong, labels}): Highland.Stream&lt;{username, password, url, ref,
+  serviceNameLong, labels}): Highland.Stream<{username, password, url, ref,
   remoteRef}> |
-  [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;{username,
+  [Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<{username,
   password, url, ref, remoteRef}> |
-  [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;{username,
+  [Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<{username,
   password, url, ref, remoteRef}> | {username, password, url, ref, remoteRef})**
 
-Returns **function (Highland.Stream&lt;{stack, taskId, image, serviceId,
-serviceName, serviceNameLong, labels}>): Highland.Stream&lt;{username, password,
+Returns **function (Highland.Stream<{stack, taskId, image, serviceId,
+serviceName, serviceNameLong, labels}>): Highland.Stream<{username, password,
 url, ref, remoteRef}>**
 
 #### app
@@ -183,6 +183,7 @@ HTTP API for working with `docker-inventory-git`.
 - `options`
   **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
   (optional, default `{}`)
+
   - `options.app` **(Express | Application | IRouter)** Express.js Application
     instance or Router on which to apply paths. (optional, default `express()`)
 
@@ -196,6 +197,7 @@ Pushes a git commit to its repo, with a specific remoteRef.
 
 - `options`
   **[object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**
+
   - `options.username`
     **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**
     username for git authentication
@@ -213,5 +215,5 @@ Pushes a git commit to its repo, with a specific remoteRef.
     name of the remote ref, for example refs/deployed/stage
 
 Returns
-**[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)&lt;void>**
+**[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<void>**
 resolves when done
